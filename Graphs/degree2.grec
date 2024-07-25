@@ -1,0 +1,39 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: combinegraph_g
+*! family: combine
+*! date: 17 Jul 2023
+*! time: 18:43:07
+*! graph_scheme: white_tableau
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.plotregion1.graph1.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph1.title.text = {}
+.plotregion1.graph1.title.text.Arrpush First year
+// title edits
+
+.plotregion1.graph1.style.editstyle margin(small) editcopy
+// graph1 margin
+
+.plotregion1.graph2.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph2.title.text = {}
+.plotregion1.graph2.title.text.Arrpush Years 2-5
+// title edits
+
+.plotregion1.graph2.style.editstyle margin(small) editcopy
+// graph2 margin
+
+.plotregion1.graph3.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph3.title.text = {}
+.plotregion1.graph3.title.text.Arrpush Years 6-10
+// title edits
+
+.plotregion1.graph3.style.editstyle margin(small) editcopy
+// graph3 margin
+
+
+// <end>

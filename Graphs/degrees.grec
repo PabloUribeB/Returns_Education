@@ -1,0 +1,43 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: combinegraph_g
+*! family: combine
+*! date: 14 Jul 2023
+*! time: 12:00:46
+*! graph_scheme: white_tableau
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.plotregion1.graph1.title.style.editstyle size(medium) editcopy
+// title size
+
+.plotregion1.graph1.title.text = {}
+.plotregion1.graph1.title.text.Arrpush Complete professional
+// graph1 edits
+
+.plotregion1.graph2.title.style.editstyle size(medium) editcopy
+.plotregion1.graph2.title.text = {}
+.plotregion1.graph2.title.text.Arrpush Incomplete professional
+// title edits
+
+// graph2 edits
+
+.plotregion1.graph3.title.style.editstyle size(medium) editcopy
+.plotregion1.graph3.title.text = {}
+.plotregion1.graph3.title.text.Arrpush Complete short-cycle
+// title edits
+
+// graph3 edits
+
+.plotregion1.graph4.title.style.editstyle size(medium) editcopy
+.plotregion1.graph4.title.text = {}
+.plotregion1.graph4.title.text.Arrpush Incomplete short-cycle
+// title edits
+
+// graph4 edits
+
+
+// <end>

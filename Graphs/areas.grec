@@ -1,0 +1,84 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: combinegraph_g
+*! family: combine
+*! date: 14 Jul 2023
+*! time: 17:35:26
+*! graph_scheme: white_tableau
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.plotregion1.graph1.title.style.editstyle size(medium) editcopy
+.plotregion1.graph1.title.text = {}
+.plotregion1.graph1.title.text.Arrpush Agronomy, veterinary
+// title edits
+
+// graph1 edits
+
+.plotregion1.graph1.title.style.editstyle size(medsmall) editcopy
+// title size
+
+// title size
+
+.plotregion1.graph1.style.editstyle margin(small) editcopy
+// graph1 margin
+
+.plotregion1.graph2.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph2.title.text = {}
+.plotregion1.graph2.title.text.Arrpush Education science
+// title edits
+
+.plotregion1.graph2.style.editstyle margin(small) editcopy
+// graph2 margin
+
+.plotregion1.graph3.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph3.title.text = {}
+.plotregion1.graph3.title.text.Arrpush Health sciences
+// title edits
+
+.plotregion1.graph3.style.editstyle margin(small) editcopy
+// graph3 margin
+
+.plotregion1.graph4.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph4.title.text = {}
+.plotregion1.graph4.title.text.Arrpush Social and human sciences
+// title edits
+
+.plotregion1.graph4.style.editstyle margin(small) editcopy
+// graph4 margin
+
+.plotregion1.graph2.title.text = {}
+.plotregion1.graph2.title.text.Arrpush Education sciences
+// title edits
+
+.plotregion1.graph5.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph5.title.text = {}
+.plotregion1.graph5.title.text.Arrpush Economics, BA, accounting
+// title edits
+
+.plotregion1.graph5.style.editstyle margin(small) editcopy
+// graph5 margin
+
+// graph5 margin
+
+.plotregion1.graph6.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph6.title.text = {}
+.plotregion1.graph6.title.text.Arrpush Engineering, architecture, urbanism
+// title edits
+
+.plotregion1.graph6.style.editstyle margin(small) editcopy
+// graph6 margin
+
+.plotregion1.graph7.title.style.editstyle size(medsmall) editcopy
+.plotregion1.graph7.title.text = {}
+.plotregion1.graph7.title.text.Arrpush Mathematics and natural sciences
+// title edits
+
+.plotregion1.graph7.style.editstyle margin(small) editcopy
+// graph7 margin
+
+
+// <end>
