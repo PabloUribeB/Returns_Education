@@ -1,0 +1,191 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[bookmarksopen,colorlinks,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{float,lscape}
+\usepackage{longtable}
+\usepackage[margin=2.54cm, include foot]{geometry}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{threeparttable}
+\usepackage{multicol}
+\usepackage{dcolumn}
+\usepackage{geometry}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage[nameinlink]{cleveref}
+\usepackage{appendix}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage[T1]{fontenc}
+\usepackage{rotating}
+\usepackage[natbibapa]{apacite}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\hypersetup{
+	colorlinks,
+	citecolor=Blue,
+	linkcolor=Blue,
+	}
+\usepackage{titling}
+
+\begin{document}
+\renewcommand{\BOthers}[1]{et al.\hbox{}}
+\newcommand\fnote[1]{\captionsetup{font=small}\caption*{#1}}
+
+%\vspace{-2.35cm}
+\title{\Large \textbf{Returns to education (CAMBIAR)} \vspace{-0.1cm}}
+\author{Christian Posso \and Pablo Uribe \and Estefania Saravia\thanks{Posso: \textit{Banco de la Republica} (\href{mailto:cpossosu@banrep.gov.co}{cpossosu@banrep.gov.co}). Saravia: UCLA (\href{mailto:esaravia@ucla.edu}{esaravia@ucla.edu}. Uribe: World Bank (\href{mailto:puribebotero@worldbank.org}{puribebotero@worldbank.org}). The findings, interpretations, and conclusions expressed in this paper do not necessarily reflect the views of \textit{Banco de la República} or its Board of Directors. The authors’ names are listed in random order.}}
+\maketitle
+
+\vspace{-0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+    
+\end{abstract}
+
+
+
+\textit{\textbf{Keywords:}} 
+
+
+
+\textit{\textbf{JEL Classification:}}
+
+\vspace{.5cm}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+Since \citet{becker1962investment} and \citet{mincer1974schooling}, economists have been particularly interested in analyzing the effects of increased schooling, since the cognitive and non-cognitive skills that can be developed through schooling have long-lasting impacts on people's lives \citep{heckman2006effects}. In the more than 60-year history of this literature, studies have found relatively high returns to education across the world \citep{psacharopoulos2018returns}, and that these could even be non-pecuniary in nature \citep{oreopoulos2011priceless}. Specifically, a large number of studies have focused on the returns to higher education, where the conclusion is somewhat similar: in general, there are significant returns to a college degree \citep{oreopoulos2013making}. 
+
+However, these results conceal a high degree of heterogeneity. For instance, some individuals may benefit more from college than others, certain majors have higher returns, there might be ``sheepskin'' effects,\footnote{The term comes from \citet{layard1974screening} and refers to the additional increase in returns that may be associated with getting a diploma.} among others. These types of heterogeneities have not been as studied as much as the overall returns, but within the available evidence, most of it focuses on developed settings like the US \citep{altonji2018costs,altonji2021labor,andrews2022returns,zimmerman2014returns}. On the other hand, even less is known about the heterogeneities in developing countries, which exhibit the largest average returns \citep{peet2015returns}. The few evidence comes from household surveys \citep{belskaya2020heterogeneity,levy2016labor}.
+
+Colombia bases admin \citep{gonzalez2015returns,herrera2020economic,gomez2022returns}. El de Gonzalez habla sobre malos retornos en TyT.
+Los retornos en Colombia se han mantenido estables en el tiempo \citep{tenjo2017evolution}.
+
+El más cercano al nuestro es el de Herrera (también es Panel Icfes, Spadies, Pila) y el de Gomez (no es panel sino cross-section).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Setting} \label{sec:context}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data} \label{sec:data}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Empirical Strategy} \label{sec:empirical}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results} \label{sec:results}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion} \label{sec:conclusion}
+
+
+\newpage
+
+\section{Acknowledgements}
+
+
+\newpage
+\bibliographystyle{apacite}
+\bibliography{references}
+
+\newpage
+\appendix
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\section{Data construction appendix \label{sec:data_appendix}}
+
+In this section, we outline our main approach to data construction. As such, we provide a detailed description of the restrictions we placed on our datasets, as well as the way in which we constructed our treatment and outcome variables. Additionally, we explain how data from different sources were matched. \autoref{tab:datasets} summarizes our datasets and their sources.
+
+\textcolor{red}{ESTA TABLA HAY QUE CAMBIARLA}
+\begin{table}[H]
+  \centering
+  \caption{Datasets}
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{ll}
+    \toprule
+    Name  & Source \\
+    \midrule
+    \textit{Saber 11} & Icfes \\
+    Reports on treated schools & Secretary of Education of the Mayor's Office of Medellin  \\
+    SNIES & National Ministry of Education \\
+    \textit{Saber TyT} & Icfes \\
+    \textit{Olimpiadas del Conocimiento} & Secretary of Education of the Mayor's Office of Medellin  \\
+    Beneficiaries of financial aid & ICETEX \\
+    Beneficiaries of financial aid & Sapiencia \\
+    Beneficiaries of \textit{Ser Pilo Paga} & ICETEX \\
+    \bottomrule
+    \end{tabular}%
+    }
+  \label{tab:datasets}%
+\end{table}%
+
+
+
+\subsection{Saber 11}
+
+The Saber 11 dataset includes, among other essential covariates for our analysis, unique identifiers that enable us to merge it with other datasets containing vital information, particularly related to higher education and market labor outcomes, which are the primary outcomes of our analysis. Consequently, we need to combine our dataset with these others.
+
+However, a significant challenge arises due to the fact that, in Colombia, until the year 2000, individuals under the age of 18 were assigned a specific identification number distinct from the one they would receive upon turning 18, the legal age of majority. At that point, individuals would undergo a complete change in their ID number, transitioning from \textit{Tarjeta de Identidad} to \textit{Cedula}, which is the  final and lifelong ID for every individual in Colombia.
+
+This challenge holds significant importance because individuals typically take the Saber 11 test just before graduating from school, a period that usually falls between the ages of 16-17. As a result, a majority of them will possess different identification numbers in the SPADIES dataset and specially in the PILA dataset, where their employment information is recorded. The average age of the test-takers in our sample is XXX years old, which strengthens our argument.
+
+To address this issue, we utilize two datasets mentioned earlier, \textit{Registraduria} and SISBEN, to obtain the final ID for each individual. The strategy differs for each of these datasets. In the case of the \textit{Registraduria} dataset, it contains the correspondence between both IDs, so we only needed to retrieve the second ID for all individuals in our primary sample found there. However, since \textit{Registraduria} is a subsample of the entire population, we couldn't find the final ID for all individuals in that data source, so we had to turn to SISBEN.
+
+In SISBEN, we use a range of matching criteria, incorporating variables such as date of birth, geographic location, and especially names. Our approach leverages the naming conventions prevalent in Hispanic America, which typically feature two given names, followed by the paternal surname and, subsequently, the maternal surname. For instance, in a hypothetical scenario involving an individual named Juan Carlos Gomez Ruiz, "Juan" would be the first given name, "Carlos" the second given name, "Gomez" the paternal surname, and "Ruiz" the maternal surname.
+
+There are two primary reasons why we couldn't find an individual's lifelong ID.
+Firstly, the person is not enrolled in the SISBEN system. While all Colombians are eligible to register with SISBEN,\footnote{People is classified in several socioeconomic scales} it is widely recognized that SISBEN, among other functions, prioritizes identifying vulnerable or economically disadvantaged individuals for the allocation of public resources. This acts as a deterrent for some individuals who may choose not to register.
+
+Furthermore, the process of registering with SISBEN involves certain non-monetary costs, primarily in terms of time. A household member is required to complete the application using a valid ID, and subsequently, a home visit is scheduled during which a comprehensive survey is conducted. This additional step can potentially dissuade some people from completing the registration process. Secondly, as previously mentioned, the \textit{Registraduria} dataset is a subset of the Colombian population collected in 2021 for other purposes by the Ministry of Education. This subset comprises only 5,264,393 individuals.
+
+
+
+\subsection{Final sample}
+Out of the \textcolor{red}{3,682,607} individuals who took the SABER 11 exam between 2001 and \textcolor{red}{2008?}, we match the datasets mentioned above using unique IDs. \textcolor{red}{XXX} individuals are excluded because we couldn't merge with the SPADIES or PILA datasets, or due to insufficient data quality, as previously mentioned (particularly in the case of spring 2005). Our primary analysis focuses on the remaining sample of \textcolor{red}{XXX} individuals. Within this selected group, we created a semester-balanced panel, resulting in \textcolor{red}{XXX} observations.
+
+The covariates extracted from the SABER 11 dataset include: student gender, municipality and department of residence, whether the student pays tuition fees at their school, their score on the Saber 11 test, the average score of the student's school, school session, school type (academic or technical), and school calendar.
+
+
+\subsection{PILA}
+
+
+\subsection{RIPS}
+
+
+
+\subsection{Other data}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{XX appendix}
+
+
+
+\end{document}
