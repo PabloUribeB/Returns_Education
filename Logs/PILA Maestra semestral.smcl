@@ -1,0 +1,298 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Logs\PILA Maestra semestral.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}16 Aug 2024, 16:46:27
+{txt}
+{com}. 
+. 
+. ****************************************************************************
+. **#         1. Loop through PILA months
+. ****************************************************************************
+. 
+. gen delete = 0
+{txt}
+{com}. save "$data\PILA_master_semester.dta", replace
+{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. global loop "01 02 03 04 05 06 07 08 09 10 11 12"
+{txt}
+{com}. 
+. forval y = 2008/2019 {c -(}
+{txt}  2{com}.     
+.         clear all
+{txt}  3{com}.         gen delete = .
+{txt}  4{com}.         tempfile temp_pila_`y'
+{txt}  5{com}.         save `temp_pila_`y'', replace
+{txt}  6{com}.     
+.         foreach i of global loop {c -(}
+{txt}  7{com}. 
+.         di as err "********* `y'm`i' *********" 
+{txt}  8{com}.         cd "${c -(}pila_og{c )-}"
+{txt}  9{com}. 
+.         quietly{c -(}
+{txt} 10{com}.             
+.         use "`y'm`i'cBR", clear
+{txt} 11{com}. 
+.         cap drop year month
+{txt} 12{com}. 
+.         gen year  = `y'
+{txt} 13{com}.         gen month = `i'
+{txt} 14{com}.         gen fecha_pila = ym(`y', `i')
+{txt} 15{com}.         format fecha_pila %tm
+{txt} 16{com}. 
+.         * New variables
+.         gen ibc_salud           = ibc_sal
+{txt} 17{com}.         gen dias_cot_salud      = sal_dias_cot
+{txt} 18{com}.         gen tipo_cotizante      = tipo_cotiz
+{txt} 19{com}. 
+.         gen pila_independientes = inlist(tipo_cotizante, 2, 3, 16, 41,  ///
+>                                   42, 59, 57, 66)
+{txt} 20{com}. 
+.         gen pila_posgrad_salud  = (tipo_cotizante == 21)        
+{txt} 21{com}.         gen pila_dependientes   = (pila_independientes != 1 &       ///
+>                                    pila_posgrad_salud! = 1)
+{txt} 22{com}.                 
+.         foreach var of varlist salario_bas ibc_pens ibc_sal ibc_rprof {c -(}
+{txt} 23{com}.             
+.             rename `var' `var'_orig
+{txt} 24{com}.             
+.             bys personabasicaid id: egen        `var' = max(`var'_orig) if  ///
+>                 (pila_dependientes == 1)
+{txt} 25{com}.                 
+.             bys personabasicaid id: replace `var' = `var'_orig      if  ///
+>                 (pila_independientes == 1)
+{txt} 26{com}.             
+.         {c )-}
+{txt} 27{com}. 
+.         drop salario_bas_orig ibc_pens_orig ibc_sal_orig ibc_rprof_orig day_birth
+{txt} 28{com}. 
+.         * Minimum wage per year
+.         gen     mw = 461500 if year==2008
+{txt} 29{com}.         replace mw = 496900 if year==2009
+{txt} 30{com}.         replace mw = 515000 if year==2010
+{txt} 31{com}.         replace mw = 535600 if year==2011
+{txt} 32{com}.         replace mw = 566700 if year==2012
+{txt} 33{com}.         replace mw = 589500 if year==2013
+{txt} 34{com}.         replace mw = 616000 if year==2014
+{txt} 35{com}.         replace mw = 644350 if year==2015
+{txt} 36{com}.         replace mw = 689455 if year==2016
+{txt} 37{com}.         replace mw = 737717 if year==2017
+{txt} 38{com}.         replace mw = 781242 if year==2018
+{txt} 39{com}.         replace mw = 828116 if year==2019
+{txt} 40{com}.         replace mw = 877803 if year==2020
+{txt} 41{com}.         replace mw = 908526 if year==2021
+{txt} 42{com}. 
+.         *Minimum wage t-1
+.         gen     mw_1 = 461500  if (year == 2009)
+{txt} 43{com}.         replace mw_1 = 496900  if (year == 2010)
+{txt} 44{com}.         replace mw_1 = 515000  if (year == 2011)
+{txt} 45{com}.         replace mw_1 = 535600  if (year == 2012)
+{txt} 46{com}.         replace mw_1 = 566700  if (year == 2013)
+{txt} 47{com}.         replace mw_1 = 589500  if (year == 2014)
+{txt} 48{com}.         replace mw_1 = 616000  if (year == 2015)
+{txt} 49{com}.         replace mw_1 = 644350  if (year == 2016)
+{txt} 50{com}.         replace mw_1 = 689455  if (year == 2017)
+{txt} 51{com}.         replace mw_1 = 737717  if (year == 2018)
+{txt} 52{com}.         replace mw_1 = 781242  if (year == 2019)
+{txt} 53{com}.         replace mw_1 = 828116  if (year == 2020)
+{txt} 54{com}.         replace mw_1 = 877803  if (year == 2021)
+{txt} 55{com}.         replace mw_1 = 908526  if (year == 2022)
+{txt} 56{com}.         replace mw_1 = 1000000 if (year == 2023)
+{txt} 57{com}. 
+.         egen    rowmax  = rowmax(ibc*)
+{txt} 58{com}.         replace rowmax  = mw if (rowmax >= mw_1 * 0.8 & rowmax < mw)            
+{txt} 59{com}.         replace rowmax  = rowmax / 0.4 if (pila_independientes == 1 &   ///
+>                           rowmax > mw)
+{txt} 60{com}. 
+.         replace salario_bas = mw if (rowmax >= mw_1 * 0.8 & rowmax < mw)
+{txt} 61{com}. 
+.         egen    pila_salario = rowmax(rowmax salario_bas)
+{txt} 62{com}.         replace pila_salario = .  if (pila_posgrad_salud == 1)
+{txt} 63{com}.         lab var pila_salario "Salario nominal"
+{txt} 64{com}.         drop    rowmax
+{txt} 65{com}. 
+.         gen     pila_salario_max = pila_salario
+{txt} 66{com}. 
+.         * Get the CPI
+.         merge m:1 year month using "${c -(}ipc{c )-}\IPC mensual", keep(1 3) nogen
+{txt} 67{com}. 
+.         * Generate real wages (base 2018m12)
+.         global vars pila_salario pila_salario_max arp_cot_obl ibc_rprof
+{txt} 68{com}. 
+.         foreach var in $vars {c -(}
+{txt} 69{com}.             
+.             gen     `var'_r = (`var' / IPC) * 100
+{txt} 70{com}.             replace `var'_r = . if mi(`var')
+{txt} 71{com}.             
+.         {c )-}
+{txt} 72{com}. 
+.         gen tasa_riesgop = arp_cot_obl_r / ibc_rprof_r
+{txt} 73{com}. 
+.         rename  dias_cot_salud pila_dias_cot
+{txt} 74{com}. 
+.         * Remove duplicates of contributions with same company
+.         gduplicates drop personabasicaid id if pila_dependientes == 1, force
+{txt} 75{com}.             
+.         * Since people may have more than one contribution each month, sum the 
+.         * wages of each contribution and keep the max of other variables
+.         foreach var of varlist pila_salario_r {c -(}
+{txt} 76{com}.             
+.             bys personabasicaid: ereplace       `var'                = total(`var')
+{txt} 77{com}.             
+.             bys personabasicaid: egen       `var'_dependientes   = total(`var') ///
+>                 if (pila_dependientes == 1)
+{txt} 78{com}.                 
+.             bys personabasicaid: egen       `var'_independientes = total(`var') ///
+>                 if (pila_independientes == 1)
+{txt} 79{com}.             
+.         {c )-}
+{txt} 80{com}. 
+.         foreach var of varlist sal_dias_cot pila_dependientes       ///
+>                 pila_independientes pila_posgrad_salud tasa_riesgop {c -(}
+{txt} 81{com}.             
+.           bys personabasicaid: ereplace `var' = max(`var')  
+{txt} 82{com}.           
+.         {c )-}
+{txt} 83{com}. 
+.         replace sal_dias_cot = 30 if sal_dias_cot > 30 & !mi(sal_dias_cot)
+{txt} 84{com}. 
+.         gsort personabasicaid tipo_cotizante
+{txt} 85{com}. 
+.         gduplicates drop personabasicaid, force
+{txt} 86{com}. 
+.         tostring ciudad_cod depto_cod, replace
+{txt} 87{com}. 
+.         replace ciudad_cod = "00" + ciudad_cod if length(ciudad_cod) == 1 & ///
+>                 ciudad_cod != "."
+{txt} 88{com}.                 
+.         replace ciudad_cod = "0" + ciudad_cod if length(ciudad_cod) == 2 &  ///
+>                 ciudad_cod != "."
+{txt} 89{com}. 
+.         replace depto_cod = "0" + depto_cod if length(depto_cod) == 1 &     ///
+>                 depto_cod != "."
+{txt} 90{com}. 
+.         gen pila_cod_mun = depto_cod + ciudad_cod
+{txt} 91{com}. 
+.         *Keep relevant variables
+.         keep personabasicaid fecha_pila year month sexomode fechantomode *_r ///
+>         pila_independientes pila_dependientes pila_cod_mun id sal_dias_cot   ///
+>         tasa_riesgop
+{txt} 92{com}. 
+.         *Remove any duplicates
+.         gduplicates drop personabasicaid, force
+{txt} 93{com}. 
+.         compress
+{txt} 94{com}. 
+.         append using `temp_pila_`y''
+{txt} 95{com}.         save `temp_pila_`y'', replace   
+{txt} 96{com}.                 {c )-}
+{txt} 97{com}.         {c )-}
+{txt} 98{com}.         
+.     gen half_pila = hofd(dofm(fecha_pila)), after(month)
+{txt} 99{com}.     format %th half_pila
+{txt}100{com}. 
+.     *** Generate semester-level variables
+.     bys personabasicaid half_pila: gegen max_fecha = max(fecha_pila *   ///
+>         (!mi(pila_salario_mes_r)))
+{txt}101{com}. 
+.     format max_fecha %tm
+{txt}102{com}. 
+.     bys personabasicaid half_pila: gegen temp = mean(pila_salario_mes_r)    ///
+>         if (fecha_pila == max_fecha)
+{txt}103{com}. 
+.     ** Put January for those without jobs in a given year
+.     bys personabasicaid half_pila: gen ultimo_mes = month(dofm(max_fecha))
+{txt}104{com}. 
+. 
+.     ** Last seen wage
+.     bys personabasicaid half_pila: gegen salario_ultimo_obs = min(temp)
+{txt}105{com}. 
+. 
+.     ** Median wage
+.     bys personabasicaid half_pila: gegen salario_mediano = median(pila_salario_mes_r)
+{txt}106{com}. 
+. 
+.     ** Mean wage
+.     bys personabasicaid half_pila: gegen salario_medio = mean(pila_salario_mes_r)
+{txt}107{com}. 
+.     ** Dummy variables
+.     foreach var of varlist pila_independientes pila_dependientes tasa_riesgop {c -(}
+{txt}108{com}.         
+.         bys personabasicaid: ereplace `var' = max(`var')
+{txt}109{com}.         
+.     {c )-}
+{txt}110{com}. 
+.     drop temp
+{txt}111{com}. 
+.     ** Days contributed
+.     bys personabasicaid half_pila: gegen   temp            = mean(sal_dias_cot) ///
+>         if (fecha_pila == max_fecha)
+{txt}112{com}.         
+.     bys personabasicaid half_pila: gegen   dias_ultimo_obs = min(temp)
+{txt}113{com}.     bys personabasicaid half_pila: replace dias_ultimo_obs = 0 if mi(dias_ultimo_obs)
+{txt}114{com}. 
+.     drop temp
+{txt}115{com}. 
+.     ** Median days
+.     bys personabasicaid half_pila: gegen dias_medianos   = median(sal_dias_cot)
+{txt}116{com}.     bys personabasicaid half_pila: replace dias_medianos = 0 if mi(dias_medianos)
+{txt}117{com}. 
+. 
+.     ** Mean days
+.     bys personabasicaid half_pila: gegen dias_medios   = mean(sal_dias_cot)
+{txt}118{com}.     bys personabasicaid half_pila: replace dias_medios = 0 if mi(dias_medios)
+{txt}119{com}. 
+. 
+.     **** Collapse at the semester level
+. 
+.     keep salario_ultimo_obs salario_mediano ultimo_mes salario_medio    ///
+>     dias_ultimo_obs dias_medianos dias_medios pila_dependientes         ///
+>     pila_independientes personabasicaid half_pila year tasa_riesgop
+{txt}120{com}. 
+.     collapse (mean) salario_ultimo_obs salario_mediano ultimo_mes       ///
+>     salario_medio dias_ultimo_obs dias_medianos dias_medios             ///
+>     (max) pila_dependientes pila_independientes tasa_riesgop,           ///
+>     by(personabasicaid half_pila)
+{txt}121{com}. 
+.     append using "${c -(}data{c )-}\PILA_master_semester.dta"
+{txt}122{com}.     save "${c -(}data{c )-}\PILA_master_semester.dta", replace
+{txt}123{com}.         
+. {c )-}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000001.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000001.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2008m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}variable {bf}day_birth{sf} not found
+{txt}{search r(111), local:r(111);}
+
+end of do-file
+{search r(111), local:r(111);}
+
+end of do-file
+
+{search r(111), local:r(111);}
+
+{com}. 
