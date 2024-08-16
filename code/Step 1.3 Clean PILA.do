@@ -80,7 +80,7 @@ forval y = 2008/2019 {
             
         }
 
-        drop salario_bas_orig ibc_pens_orig ibc_sal_orig ibc_rprof_orig day_birth
+        drop salario_bas_orig ibc_pens_orig ibc_sal_orig ibc_rprof_orig
 
         * Minimum wage per year
         gen     mw = 461500 if year==2008
