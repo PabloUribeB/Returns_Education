@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Logs\PILA Maestra semestral.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 Aug 2024, 16:46:27
+ {txt}opened on:  {res}16 Aug 2024, 17:03:41
 {txt}
 {com}. 
 . 
@@ -15,11 +15,6 @@
 {txt}
 {com}. save "$data\PILA_master_semester.dta", replace
 {txt}(dataset contains 0 observations)
-{p 0 4 2}
-(file {bf}
-C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
-not found)
-{p_end}
 {p 0 4 2}
 file {bf}
 C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
@@ -77,7 +72,7 @@ saved
 {txt} 26{com}.             
 .         {c )-}
 {txt} 27{com}. 
-.         drop salario_bas_orig ibc_pens_orig ibc_sal_orig ibc_rprof_orig day_birth
+.         drop salario_bas_orig ibc_pens_orig ibc_sal_orig ibc_rprof_orig
 {txt} 28{com}. 
 .         * Minimum wage per year
 .         gen     mw = 461500 if year==2008
@@ -285,14 +280,37 @@ as .dta format
 {p_end}
 {err}********* 2008m01 *********
 {res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
-{err}variable {bf}day_birth{sf} not found
-{txt}{search r(111), local:r(111);}
+{err}********* 2008m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2008m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{err}Invalid call; please specify {opth max(varlist)} or {opth max(exp)}.
+{txt}{search r(198), local:r(198);}
 
 end of do-file
-{search r(111), local:r(111);}
+{search r(198), local:r(198);}
 
 end of do-file
 
-{search r(111), local:r(111);}
+{search r(198), local:r(198);}
 
 {com}. 
