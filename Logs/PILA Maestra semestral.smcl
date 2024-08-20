@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Logs\PILA Maestra semestral.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 Aug 2024, 17:03:41
+ {txt}opened on:  {res}20 Aug 2024, 10:09:02
 {txt}
 {com}. 
 . 
@@ -183,8 +183,7 @@ saved
 {txt} 91{com}. 
 .         *Keep relevant variables
 .         keep personabasicaid fecha_pila year month sexomode fechantomode *_r ///
->         pila_independientes pila_dependientes pila_cod_mun id sal_dias_cot   ///
->         tasa_riesgop
+>         pila_independientes pila_dependientes pila_cod_mun id sal_dias_cot
 {txt} 92{com}. 
 .         *Remove any duplicates
 .         gduplicates drop personabasicaid, force
@@ -201,11 +200,11 @@ saved
 {txt}100{com}. 
 .     *** Generate semester-level variables
 .     bys personabasicaid half_pila: gegen max_fecha = max(fecha_pila *   ///
->         (!mi(pila_salario_mes_r)))
+>         (!mi(pila_salario_r)))
 {txt}101{com}. 
 .     format max_fecha %tm
 {txt}102{com}. 
-.     bys personabasicaid half_pila: gegen temp = mean(pila_salario_mes_r)    ///
+.     bys personabasicaid half_pila: gegen temp = mean(pila_salario_r)    ///
 >         if (fecha_pila == max_fecha)
 {txt}103{com}. 
 .     ** Put January for those without jobs in a given year
@@ -217,14 +216,14 @@ saved
 {txt}105{com}. 
 . 
 .     ** Median wage
-.     bys personabasicaid half_pila: gegen salario_mediano = median(pila_salario_mes_r)
+.     bys personabasicaid half_pila: gegen salario_mediano = median(pila_salario_r)
 {txt}106{com}. 
 . 
 .     ** Mean wage
-.     bys personabasicaid half_pila: gegen salario_medio = mean(pila_salario_mes_r)
+.     bys personabasicaid half_pila: gegen salario_medio = mean(pila_salario_r)
 {txt}107{com}. 
 .     ** Dummy variables
-.     foreach var of varlist pila_independientes pila_dependientes tasa_riesgop {c -(}
+.     foreach var of varlist pila_independientes pila_dependientes {c -(}
 {txt}108{com}.         
 .         bys personabasicaid: ereplace `var' = max(`var')
 {txt}109{com}.         
@@ -233,7 +232,7 @@ saved
 .     drop temp
 {txt}111{com}. 
 .     ** Days contributed
-.     bys personabasicaid half_pila: gegen   temp            = mean(sal_dias_cot) ///
+.     bys personabasicaid half_pila: gegen   temp = mean(sal_dias_cot)    ///
 >         if (fecha_pila == max_fecha)
 {txt}112{com}.         
 .     bys personabasicaid half_pila: gegen   dias_ultimo_obs = min(temp)
@@ -259,7 +258,7 @@ saved
 {txt}120{com}. 
 .     collapse (mean) salario_ultimo_obs salario_mediano ultimo_mes       ///
 >     salario_medio dias_ultimo_obs dias_medianos dias_medios             ///
->     (max) pila_dependientes pila_independientes tasa_riesgop,           ///
+>     (max) pila_dependientes pila_independientes,                        ///
 >     by(personabasicaid half_pila)
 {txt}121{com}. 
 .     append using "${c -(}data{c )-}\PILA_master_semester.dta"
@@ -303,14 +302,27 @@ as .dta format
 {err}********* 2008m12 *********
 {res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
 {txt}performance warning: -by- prefix may be slower than -by()-
-{res}{err}Invalid call; please specify {opth max(varlist)} or {opth max(exp)}.
-{txt}{search r(198), local:r(198);}
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(1,853,209 real changes made)
+(1,354,971 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(9 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(1 real change made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(1 real change made)
+{err}variable {bf}tasa_riesgop{sf} not found
+{txt}{search r(111), local:r(111);}
 
 end of do-file
-{search r(198), local:r(198);}
+{search r(111), local:r(111);}
 
 end of do-file
 
-{search r(198), local:r(198);}
+{search r(111), local:r(111);}
 
 {com}. 
