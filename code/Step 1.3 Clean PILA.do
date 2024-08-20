@@ -262,7 +262,7 @@ forval y = 2008/2019 {
 
     keep salario_ultimo_obs salario_mediano ultimo_mes salario_medio    ///
     dias_ultimo_obs dias_medianos dias_medios pila_dependientes         ///
-    pila_independientes personabasicaid half_pila year tasa_riesgop
+    pila_independientes personabasicaid half_pila year
 
     collapse (mean) salario_ultimo_obs salario_mediano ultimo_mes       ///
     salario_medio dias_ultimo_obs dias_medianos dias_medios             ///
