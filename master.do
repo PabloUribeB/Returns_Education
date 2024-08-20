@@ -68,8 +68,8 @@ global output   "${root}\Output"
 * Run all do files
 ****************************************************************************
 
-do "${do_files}\Step 1.1 - Clean master.do"
-do "${do_files}\Step 1.2 - Clean SPADIES.do"
+*do "${do_files}\Step 1.1 - Clean master.do"
+*do "${do_files}\Step 1.2 - Clean SPADIES.do"
 do "${do_files}\Step 1.3 Clean PILA.do"
 do "${do_files}\Step 3 - Match master-SPADIES-PILA.do"
 do "${do_files}\Step 5 - Main estimations.do"
