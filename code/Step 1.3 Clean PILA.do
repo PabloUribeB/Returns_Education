@@ -191,8 +191,7 @@ forval y = 2008/2019 {
 
         *Keep relevant variables
         keep personabasicaid fecha_pila year month sexomode fechantomode *_r ///
-        pila_independientes pila_dependientes pila_cod_mun id sal_dias_cot   ///
-        tasa_riesgop
+        pila_independientes pila_dependientes pila_cod_mun id sal_dias_cot
 
         *Remove any duplicates
         gduplicates drop personabasicaid, force
@@ -209,11 +208,11 @@ forval y = 2008/2019 {
 
     *** Generate semester-level variables
     bys personabasicaid half_pila: gegen max_fecha = max(fecha_pila *   ///
-        (!mi(pila_salario_mes_r)))
+        (!mi(pila_salario_r)))
 
     format max_fecha %tm
 
-    bys personabasicaid half_pila: gegen temp = mean(pila_salario_mes_r)    ///
+    bys personabasicaid half_pila: gegen temp = mean(pila_salario_r)    ///
         if (fecha_pila == max_fecha)
 
     ** Put January for those without jobs in a given year
@@ -225,14 +224,14 @@ forval y = 2008/2019 {
 
 
     ** Median wage
-    bys personabasicaid half_pila: gegen salario_mediano = median(pila_salario_mes_r)
+    bys personabasicaid half_pila: gegen salario_mediano = median(pila_salario_r)
 
 
     ** Mean wage
-    bys personabasicaid half_pila: gegen salario_medio = mean(pila_salario_mes_r)
+    bys personabasicaid half_pila: gegen salario_medio = mean(pila_salario_r)
 
     ** Dummy variables
-    foreach var of varlist pila_independientes pila_dependientes tasa_riesgop {
+    foreach var of varlist pila_independientes pila_dependientes {
         
         bys personabasicaid: ereplace `var' = max(`var')
         
@@ -241,7 +240,7 @@ forval y = 2008/2019 {
     drop temp
 
     ** Days contributed
-    bys personabasicaid half_pila: gegen   temp            = mean(sal_dias_cot) ///
+    bys personabasicaid half_pila: gegen   temp = mean(sal_dias_cot)    ///
         if (fecha_pila == max_fecha)
         
     bys personabasicaid half_pila: gegen   dias_ultimo_obs = min(temp)
@@ -267,7 +266,7 @@ forval y = 2008/2019 {
 
     collapse (mean) salario_ultimo_obs salario_mediano ultimo_mes       ///
     salario_medio dias_ultimo_obs dias_medianos dias_medios             ///
-    (max) pila_dependientes pila_independientes tasa_riesgop,           ///
+    (max) pila_dependientes pila_independientes,                        ///
     by(personabasicaid half_pila)
 
     append using "${data}\PILA_master_semester.dta"
