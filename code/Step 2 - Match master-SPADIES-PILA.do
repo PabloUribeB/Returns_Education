@@ -184,7 +184,7 @@ save "${data}\Base_final_semestral.dta", replace
 ****************************************************************************
 
 drop half_pila salario_ultimo_obs salario_mediano ultimo_mes salario_medio  ///
-    dias_ultimo_obs dias_medianos dias_medios
+    dias_ultimo_obs dias_medianos dias_medios pila_dependientes pila_independientes
 
 gduplicates drop personabasicaid, force
 
@@ -229,11 +229,17 @@ drop _merge
 
 ** Formality
 bys personabasicaid half_pila: gegen formalidad = max(formal)
-replace formalidad = 0 if formalidad == .
+replace formalidad = 0 if mi(formalidad)
 
-replace dias_ultimo_obs = 0 if dias_ultimo_obs == .
+bys personabasicaid half_pila: ereplace pila_dependientes = max(pila_dependientes)
+replace pila_dependientes = 0 if mi(pila_dependientes)
 
-replace ultimo_mes = 1 if ultimo_mes == .
+bys personabasicaid half_pila: ereplace pila_independientes = max(pila_independientes)
+replace pila_independientes = 0 if mi(pila_independientes)
+
+replace dias_ultimo_obs = 0 if mi(dias_ultimo_obs)
+
+replace ultimo_mes      = 1 if mi(ultimo_mes)
 
 ** Replace salario = ., formality and days = 0 for those with wage = 0 
 ** (tipo cotizante 40 - Beneficiario UPC Adicional)
