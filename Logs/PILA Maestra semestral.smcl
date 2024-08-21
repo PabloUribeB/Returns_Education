@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Logs\PILA Maestra semestral.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}20 Aug 2024, 10:09:02
+ {txt}opened on:  {res}20 Aug 2024, 11:25:38
 {txt}
 {com}. 
 . 
@@ -254,7 +254,7 @@ saved
 . 
 .     keep salario_ultimo_obs salario_mediano ultimo_mes salario_medio    ///
 >     dias_ultimo_obs dias_medianos dias_medios pila_dependientes         ///
->     pila_independientes personabasicaid half_pila year tasa_riesgop
+>     pila_independientes personabasicaid half_pila year
 {txt}120{com}. 
 .     collapse (mean) salario_ultimo_obs salario_mediano ultimo_mes       ///
 >     salario_medio dias_ultimo_obs dias_medianos dias_medios             ///
@@ -315,14 +315,624 @@ performance warning: -by- prefix may be slower than -by()-
 {res}{txt}{res}{txt}(1 real change made)
 performance warning: -by- prefix may be slower than -by()-
 {res}{txt}{res}{txt}(1 real change made)
-{err}variable {bf}tasa_riesgop{sf} not found
-{txt}{search r(111), local:r(111);}
-
-end of do-file
-{search r(111), local:r(111);}
-
-end of do-file
-
-{search r(111), local:r(111);}
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000002.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000002.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2009m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2009m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(2,598,357 real changes made)
+(2,118,675 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000003.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000003.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2010m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2010m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(2,518,338 real changes made)
+(2,146,696 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000004.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000004.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2011m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2011m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(2,704,646 real changes made)
+(2,302,537 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000005.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000005.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2012m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2012m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(2,810,832 real changes made)
+(2,360,993 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000006.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000006.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2013m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2013m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(2,899,256 real changes made)
+(2,383,258 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000007.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000007.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2014m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2014m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,070,741 real changes made)
+(2,431,982 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000008.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000008.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2015m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2015m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,065,666 real changes made)
+(2,385,883 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000009.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_000009.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2016m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2016m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,393,544 real changes made)
+(2,498,834 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000a.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000a.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2017m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2017m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,715,181 real changes made)
+(2,593,118 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000b.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000b.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2018m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2018m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,831,260 real changes made)
+(2,651,475 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
+{res}{txt}(dataset contains 0 observations)
+{p 0 4 2}
+(file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000c.tmp{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+C:\Users\pmede1\AppData\Local\Temp\ST_36dcc_00000c.tmp{rm}
+saved
+as .dta format
+{p_end}
+{err}********* 2019m01 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m02 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m03 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m04 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m05 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m06 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m07 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m08 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m09 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m10 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m11 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{err}********* 2019m12 *********
+{res}\\sm134796\D\Originales\PILA\1.Pila mensualizada\PILA mes cotizado
+{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(3,936,334 real changes made)
+(2,719,522 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+performance warning: -by- prefix may be slower than -by()-
+{res}{txt}{res}{txt}(0 real changes made)
+{res}{txt}{p 0 4 2}
+file {bf}
+C:\Proyectos\Banrep research\f_ReturnsToEducation\Data\PILA_master_semester.dta{rm}
+saved
+{p_end}
 
 {com}. 
+. 
+. log close 
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Logs\PILA Maestra semestral.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}20 Aug 2024, 19:47:29
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
