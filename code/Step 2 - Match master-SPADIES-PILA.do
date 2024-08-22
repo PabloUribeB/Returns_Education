@@ -280,21 +280,21 @@ replace laboral_1     = 1 if inrange(half_pila, 97, 98) &       ///
         fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 gen     flexibles_1   = 1 if inrange(half_pila, 97, 98) &       ///
-        (fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
+        fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 gen     laboral_2_5   = 1 if inrange(delta, 3, 10)
 replace laboral_2_5   = 1 if inrange(half_pila, 99, 106) &      ///
-        (fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
+        fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 gen     flexibles_2_5 = 1 if inrange(half_pila, 99, 106) &      ///
-        (fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
+        fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 gen     laboral_6_10 = 1 if inrange(delta, 11, 20)
 replace laboral_6_10 = 1 if inrange(half_pila, 107, 116) &      ///
-        (fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
+        fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 gen     flexibles_6_10 = 1 if inrange(half_pila, 107, 116) &    ///
-        (fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
+        fecha_grado_semestre < 96 & !mi(fecha_grado_semestre)
 
 ** Variables for regressions
 
@@ -375,7 +375,7 @@ gen incompleto_tyt  = (grado == 0 & SPADIES_tyt  == 1)
 gen grado_prof      = (grado == 1 & SPADIES_prof == 1)
 gen incompleto_prof = (grado == 0 & SPADIES_prof == 1)
 
-** Generate average school's score
+** Generate average school score
 destring cole_cod_icfes, replace
 
 drop if mi(cole_cod_icfes)
