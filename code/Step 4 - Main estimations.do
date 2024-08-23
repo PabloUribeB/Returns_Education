@@ -214,7 +214,7 @@ foreach years in 0 1 2_5 6_10{
         vce(cluster personabasicaid)
         
         outreg2 using "${output}\areas.xls", label append dec(`dec')        ///
-        ocons keep($areas) nor2 adds(Control's mean, `mean_`outcome'')      ///
+        nocons keep($areas) nor2 adds(Control's mean, `mean_`outcome'')     ///
         ctitle("`z'","Years_`years'")                                       ///
         addtext(Scores, YES, Controls, NO, School scores, NO, City of origin FE, NO) 
         

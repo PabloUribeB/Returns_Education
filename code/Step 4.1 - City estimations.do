@@ -98,7 +98,7 @@ foreach years in 0 1 2_5 6_10{
             & areas_lora == `city', vce(cluster personabasicaid)
 
             regsave grado_tyt incompleto_tyt grado_prof incompleto_prof     ///
-            using "${output}\Grado_programas_city", `replace'                 ///
+            using "${output}\Grado_programas_city", `replace'               ///
             addlabel(outcome, "`outcome'", city, "`city'", market,          ///
             "laboral_`years'", media, `mean_`outcome'')
 
