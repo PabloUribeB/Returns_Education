@@ -93,7 +93,7 @@ foreach years in 0 1 2_5 6_10{
 
             reg `outcome' grado_tyt incompleto_tyt grado_prof               ///
             incompleto_prof $puntajes $controls $school i.year_sb11         ///
-            `ultimo_mes' i.year if ((SPADIES == 1 & !mi(nivel) |            ///
+            `ultimo_mes' i.year if (SPADIES == 1 & !mi(nivel) |             ///
             SPADIES == 0) & laboral_`years' == 1 & flexibles_`years' != 1   ///
             & areas_lora == `city', vce(cluster personabasicaid)
 
@@ -169,7 +169,7 @@ foreach years in 0 1 2_5 6_10{
                 areas_lora == `city', vce(cluster personabasicaid)
                 
 				regsave $areas using "${output}\areas_degree_city", `replace' ///
-                addlabel(outcome, "`outcome'", city, "`city'", market,      ///
+                addlabel(outcome, "`outcome'", city, "`city'", market,        ///
                 "laboral_`years'", degree, "`program'", media, `mean_`outcome'')
 				
 				local replace append
