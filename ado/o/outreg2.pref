@@ -1,0 +1,3 @@
+24 Aug 2024
+using `"Z:\Christian Posso\_banrep_research\proyectos\Returns_Education\Output\areas_degree.xls"'
+label append dec(3) nocons keep(area1 area3 area4 area5 area6 area8 area9) nor2 adds(Control's mean, .5886966441561107) ctitle("Coefficient of variation","incompleto_prof","Years_6_10") addtext(Scores, YES, Controls, YES, School scores, YES, City of origin FE, YES)
