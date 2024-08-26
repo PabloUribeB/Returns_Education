@@ -117,22 +117,22 @@ local ultimo_mes i.ultimo_mes
 
 foreach i in 0 1 2_5 6_10{
 
-	forval city = 1/62{
+forval city = 1/62{
 
-		foreach outcome in $main{
-			
-			dis as err "Regression for outcome: `outcome' in labor market: `i' for city `city'"
-			
-			local z: variable label `outcome'
-			qui sum `outcome' if area2 == 1 & laboral_`i' == 1 & flexibles_`i' != 1
-			local mean_`outcome' = r(mean)
-			
-			reg `outcome' $areas $puntajes $controls $school i.year_sb11 `ultimo_mes' i.year if laboral_`i' == 1 & flexibles_`i' != 1 & ID_areas == 1, vce(cluster personabasicaid)
-			regsave $areas using "${output}\areas_city", `replace' addlabel(outcome, "`outcome'", city,"`city'",market,"laboral_`i'",media,`mean_`outcome'')
-			
-			local replace append
-		}
-	}
+    foreach outcome in $main{
+        
+        dis as err "Regression for outcome: `outcome' in labor market: `i' for city `city'"
+        
+        local z: variable label `outcome'
+        qui sum `outcome' if area2 == 1 & laboral_`i' == 1 & flexibles_`i' != 1
+        local mean_`outcome' = r(mean)
+        
+        reg `outcome' $areas $puntajes $controls $school i.year_sb11 `ultimo_mes' i.year if laboral_`i' == 1 & flexibles_`i' != 1 & ID_areas == 1, vce(cluster personabasicaid)
+        regsave $areas using "${output}\areas_city", `replace' addlabel(outcome, "`outcome'", city,"`city'",market,"laboral_`i'",media,`mean_`outcome'')
+        
+        local replace append
+    }
+}
 }
 */
 
@@ -144,38 +144,38 @@ foreach i in 0 1 2_5 6_10{
 local replace replace
 local dec 3
 local ultimo_mes i.ultimo_mes
-foreach years in 0 1 2_5 6_10{
-	
-	foreach program in grado_tyt incompleto_tyt grado_prof incompleto_prof{
+    foreach years in 0 1 2_5 6_10{
 
-		forval city = 1/62{
-			
-			foreach outcome in $main{
-				
-				dis as err "Regression for outcome: `outcome' in labor "    ///
+    foreach program in grado_tyt incompleto_tyt grado_prof incompleto_prof{
+
+        forval city = 1/62{
+            
+            foreach outcome in $main{
+                
+                dis as err "Regression for outcome: `outcome' in labor "    ///
                 "market: `years' for city `city'"
-				
-				local z: variable label `outcome'
-				qui sum `outcome' if area2 == 1 & laboral_`years' == 1 &    ///
+                
+                local z: variable label `outcome'
+                qui sum `outcome' if area2 == 1 & laboral_`years' == 1 &    ///
                         flexibles_`years' != 1 & `program' == 1 &           ///
                         areas_lora == `city'
                         
-				local mean_`outcome' = r(mean)
-				
-				
-				reg `outcome' $areas $puntajes $controls $school            ///
+                local mean_`outcome' = r(mean)
+                
+                
+                reg `outcome' $areas $puntajes $controls $school            ///
                 i.year_sb11 `ultimo_mes' i.year if laboral_`years' == 1 &   ///
                 flexibles_`years' != 1 & ID_areas == 1 & `program' == 1 &   ///
                 areas_lora == `city', vce(cluster personabasicaid)
                 
-				regsave $areas using "${output}\areas_degree_city", `replace' ///
+                regsave $areas using "${output}\areas_degree_city", `replace' ///
                 addlabel(outcome, "`outcome'", city, "`city'", market,        ///
                 "laboral_`years'", degree, "`program'", media, `mean_`outcome'')
-				
-				local replace append
-			}
-		}
-	}
-}
+                
+                local replace append
+            }
+        }
+    }
+    }
 
 }

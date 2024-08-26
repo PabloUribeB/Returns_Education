@@ -51,25 +51,25 @@ cd "${graphs}\City\temp"
 
 foreach markets in laboral_0 laboral_1 laboral_2_5 laboral_6_10{
 
-	levelsof outcome, local(outcome)
-	foreach var in `outcome'{
+    levelsof outcome, local(outcome)
+    foreach var in `outcome'{
 
-		if "`var'" == "l_salario_ultimo_obs"{
-			local dec = 3
-			local formato format(%7.2fc)
-			local scale2 xscale(range(-.1 .8))
-		}
-		
-		else{
-			local dec = 3
-			local formato format(%7.2fc)
-			local scale2 xscale(range(-.7 1.4))
-		}
-		
-		format %13.`dec'fc coef
-		
+        if "`var'" == "l_salario_ultimo_obs"{
+            local dec = 3
+            local formato format(%7.2fc)
+            local scale2 xscale(range(-.1 .8))
+        }
+        
+        else{
+            local dec = 3
+            local formato format(%7.2fc)
+            local scale2 xscale(range(-.7 1.4))
+        }
+        
+        format %13.`dec'fc coef
+        
 
-		twoway (sc en_var coef if market == "`markets'" &                   ///
+        twoway (sc en_var coef if market == "`markets'" &                   ///
         outcome == "`var'", m(circle) mlc(black) mfc(none)),                ///
         xline(0, lcolor(black)) legend(order(1 "City estimate")             ///
         region(color(white)) size(vsmall)) graphregion(fcolor(white))       ///
@@ -78,7 +78,7 @@ foreach markets in laboral_0 laboral_1 laboral_2_5 laboral_6_10{
         xtitle(Point estimate, margin(medsmall)) `scale2'                   ///
         saving(`var'_`markets', replace)
 
-	}
+    }
 }
 
 ** Wages

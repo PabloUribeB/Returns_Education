@@ -56,53 +56,53 @@ encode var, gen(en_var) label(orden)
 
 levelsof outcome, local(outcome)
 foreach var in `outcome' {
-	
-	sum coef if outcome == "`var'" & market == "laboral_0"
-	local min: dis %7.2fc r(min)
-	local max: dis %7.2fc r(max)
-	
-	sum coef if outcome == "`var'" & control == "all"
-	local min2: dis %7.2fc r(min)
-	local max2: dis %7.2fc r(max) + (r(max) / 4)
 
-	if "`var'" == "l_salario_ultimo_obs" {
-		local dec = 3
-		local formato format(%7.2fc)
-		local scale xscale(range(0 `max'))
-		local scale2 xscale(range(0 `max2'))
-		local name Log wages
-	}
-	
-	else{
-		local dec = 3
-		local formato format(%7.2fc)
-		local scale xscale(range(0 `max'))
-		local scale2 xscale(range(0 `max2'))
-		local name Coefficient of variation
-	}
-	
-	format %13.`dec'fc coef
-	
-	twoway (sc en_var coef if control == "no" & market == "laboral_0" &     ///
+    sum coef if outcome == "`var'" & market == "laboral_0"
+    local min: dis %7.2fc r(min)
+    local max: dis %7.2fc r(max)
+
+    sum coef if outcome == "`var'" & control == "all"
+    local min2: dis %7.2fc r(min)
+    local max2: dis %7.2fc r(max) + (r(max) / 4)
+
+    if "`var'" == "l_salario_ultimo_obs" {
+        local dec = 3
+        local formato format(%7.2fc)
+        local scale xscale(range(0 `max'))
+        local scale2 xscale(range(0 `max2'))
+        local name Log wages
+    }
+
+    else{
+        local dec = 3
+        local formato format(%7.2fc)
+        local scale xscale(range(0 `max'))
+        local scale2 xscale(range(0 `max2'))
+        local name Coefficient of variation
+    }
+
+    format %13.`dec'fc coef
+
+    twoway (sc en_var coef if control == "no" & market == "laboral_0" &     ///
     outcome == "`var'", m(triangle) mlc(black) mfc(none))                   ///
-	(sc en_var coef if control == "scores" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "scores" & market == "laboral_0" &        ///
     outcome == "`var'", m(square) mlc(black) mfc(none))                     ///
-	(sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
+    (sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
     outcome == "`var'", m(diamond) mlc(black) mfc(none))                    ///
-	(sc en_var coef if control == "school" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "school" & market == "laboral_0" &        ///
     outcome == "`var'", m(plus) mlc(black) mfc(none))                       ///
-	(sc en_var coef if control == "all" & market == "laboral_0" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_0" &           ///
     outcome == "`var'", m(circle) mlc(black) mlabel(coef) mlabposition(12)  ///
     mfc(none))                                                              ///
-	(sc en_var coef if control == "no" & market == "laboral_0" &            ///
+    (sc en_var coef if control == "no" & market == "laboral_0" &            ///
     outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none))      ///
-	(sc en_var coef if control == "scores" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "scores" & market == "laboral_0" &        ///
     outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none))        ///
-	(sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
+    (sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
     outcome == "`var'" & non_sig == 1, m(diamond) mlc(red) mfc(none))       ///
-	(sc en_var coef if control == "school" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "school" & market == "laboral_0" &        ///
     outcome == "`var'" & non_sig == 1, m(plus) mlc(red) mfc(none))          ///
-	(sc en_var coef if control == "all" & market == "laboral_0" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_0" &           ///
     outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mlabel(coef)      ///
     mlabposition(12) mfc(none)),                                            ///
     xline(0, lcolor(black)) legend(order(1 "No controls" 2 "Scores" 3       ///
@@ -112,21 +112,21 @@ foreach var in `outcome' {
     ytitle("") xlabel(#10, angle(45) `formato') xtitle(Point estimate,      ///
     margin(medsmall)) `scale' subtitle(`name')                              ///
     note("{it:Note:} A red outline indicates that the coefficient is not statistically significant. The" "numbers displayed represent the point estimate of the full-controls specification.", size(vsmall))
-    
-	graph export "${graphs}\Degree type\degree_type_controls_`var'.png", replace
+
+    graph export "${graphs}\Degree type\degree_type_controls_`var'.png", replace
 
 
-	twoway (sc en_var coef if control == "all" & market == "laboral_1" &    ///
+    twoway (sc en_var coef if control == "all" & market == "laboral_1" &    ///
     outcome == "`var'", m(triangle) mlc(black) mfc(none)) 	                ///
-	(sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
+    (sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
     outcome == "`var'", m(square) mlc(black) mfc(none)) 		            ///
-	(sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
+    (sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
     outcome == "`var'", m(circle) mlc(black) mfc(none)) 		            ///
-	(sc en_var coef if control == "all" & market == "laboral_1" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_1" &           ///
     outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none)) 	    ///
-	(sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
+    (sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
     outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none)) 		///
-	(sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
+    (sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
     outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mfc(none)),       ///
     xline(0, lcolor(black)) legend(order(1 "First year" 2 "2-5 years" 3     ///
     "6-10 years") region(color(white)) rows(3) size(vsmall)                 ///
@@ -136,7 +136,7 @@ foreach var in `outcome' {
     margin(medsmall)) `scale2' subtitle(`name')                             ///
     note("{it:Note:} A red outline indicates that the coefficient is not statistically significant. These estimations are" "ran with full controls.", size(vsmall))
 
-	graph export "${graphs}\Degree type\degree_type_years_`var'.png", replace
+    graph export "${graphs}\Degree type\degree_type_years_`var'.png", replace
 
 }
 
@@ -170,51 +170,51 @@ encode var, gen(en_var) label(orden)
 
 levelsof outcome, local(outcome)
 foreach var in `outcome' {
-	
-	sum coef if outcome == "`var'"
-	local min: dis %7.2fc r(min)
-	local max: dis %7.2fc r(max)
-	
-	sum coef if outcome == "`var'" & control == "all"
-	local min2: dis %7.2fc r(min)
-	local max2: dis %7.2fc r(max)
-	
-	if "`var'" == "l_salario_ultimo_obs" {
-		local dec = 3
-		local formato format(%7.2fc)
-		local scale xscale(range(0 `max'))
-		local scale2 xscale(range(0 `max2'))
-	}
-	
-	else{
-		local dec = 3
-		local formato format(%7.2fc)
-		local scale xscale(range(`min' `max'))
-		local scale2 xscale(range(`min2' `max2'))
-	}
-	
-	format %13.`dec'fc coef
-	
-	twoway (sc en_var coef if control == "no" & market == "laboral_0" &     ///
+
+    sum coef if outcome == "`var'"
+    local min: dis %7.2fc r(min)
+    local max: dis %7.2fc r(max)
+
+    sum coef if outcome == "`var'" & control == "all"
+    local min2: dis %7.2fc r(min)
+    local max2: dis %7.2fc r(max)
+
+    if "`var'" == "l_salario_ultimo_obs" {
+        local dec = 3
+        local formato format(%7.2fc)
+        local scale xscale(range(0 `max'))
+        local scale2 xscale(range(0 `max2'))
+    }
+
+    else{
+        local dec = 3
+        local formato format(%7.2fc)
+        local scale xscale(range(`min' `max'))
+        local scale2 xscale(range(`min2' `max2'))
+    }
+
+    format %13.`dec'fc coef
+
+    twoway (sc en_var coef if control == "no" & market == "laboral_0" &     ///
     outcome == "`var'", m(triangle) mlc(black) mfc(none))                   ///
-	(sc en_var coef if control == "scores" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "scores" & market == "laboral_0" &        ///
     outcome == "`var'", m(square) mlc(black) mfc(none))                     ///
-	(sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
+    (sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
     outcome == "`var'", m(diamond) mlc(black) mfc(none))                    ///
-	(sc en_var coef if control == "school" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "school" & market == "laboral_0" &        ///
     outcome == "`var'", m(plus) mlc(black) mfc(none))                       ///
-	(sc en_var coef if control == "all" & market == "laboral_0" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_0" &           ///
     outcome == "`var'", m(circle) mlc(black) mlabel(coef) mlabposition(12)  ///
     mfc(none))                                                              ///
-	(sc en_var coef if control == "no" & market == "laboral_0" &            ///
+    (sc en_var coef if control == "no" & market == "laboral_0" &            ///
     outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none))      ///
-	(sc en_var coef if control == "scores" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "scores" & market == "laboral_0" &        ///
     outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none))        ///
-	(sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
+    (sc en_var coef if control == "socioeco" & market == "laboral_0" &      ///
     outcome == "`var'" & non_sig == 1, m(diamond) mlc(red) mfc(none))       ///
-	(sc en_var coef if control == "school" & market == "laboral_0" &        ///
+    (sc en_var coef if control == "school" & market == "laboral_0" &        ///
     outcome == "`var'" & non_sig == 1, m(plus) mlc(red) mfc(none))          ///
-	(sc en_var coef if control == "all" & market == "laboral_0" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_0" &           ///
     outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mlabel(coef)      ///
     mlabposition(12) mfc(none)),                                            ///
     xline(0, lcolor(black)) legend(order(1 "No controls" 2 "Scores" 3       ///
@@ -225,20 +225,20 @@ foreach var in `outcome' {
     margin(medsmall)) `scale'                                               ///
     note("{it:Note:} Outcome variable: `var'. A red outline indicates that the coefficient is not" "statistically significant.", size(vsmall))
 
-	graph export "${graphs}\area\area_controls_`var'.png", replace
+    graph export "${graphs}\area\area_controls_`var'.png", replace
 
 
-	twoway (sc en_var coef if control == "all" & market == "laboral_1" &    ///
+    twoway (sc en_var coef if control == "all" & market == "laboral_1" &    ///
     outcome == "`var'", m(triangle) mlc(black) mfc(none)) 	                ///
-	(sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
+    (sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
     outcome == "`var'", m(square) mlc(black) mfc(none)) 		            ///
-	(sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
+    (sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
     outcome == "`var'", m(circle) mlc(black) mfc(none)) 		            ///
-	(sc en_var coef if control == "all" & market == "laboral_1" &           ///
+    (sc en_var coef if control == "all" & market == "laboral_1" &           ///
     outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none)) 		///
-	(sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
+    (sc en_var coef if control == "all" & market == "laboral_2_5" &         ///
     outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none)) 		///
-	(sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
+    (sc en_var coef if control == "all" & market == "laboral_6_10" &        ///
     outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mfc(none)),       ///
     xline(0, lcolor(black)) legend(order(1 "First year" 2 "2-5 years" 3     ///
     "6-10 years") region(color(white)) rows(3) size(vsmall)                 ///
@@ -248,7 +248,7 @@ foreach var in `outcome' {
     margin(medsmall)) `scale2'                                              ///
     note("{it:Note:} Outcome variable: `var'. A red outline indicates that the coefficient is not" "statistically significant.", size(vsmall))
 
-	graph export "${graphs}\area\area_years_`var'.png", replace
+    graph export "${graphs}\area\area_years_`var'.png", replace
 
 }
 
@@ -282,58 +282,58 @@ cd "${graphs}\area_degree\temp"
 
 foreach degrees in grado_prof incompleto_prof grado_tyt incompleto_tyt {
 
-	preserve
+    preserve
 
-	keep if degree == "`degrees'"
+    keep if degree == "`degrees'"
 
-	levelsof outcome, local(outcome)
-	local variable "CV"
-	foreach var in `outcome'{
-		
-		sum coef if outcome == "`var'" & market == "laboral_0"
-		local min: dis %7.2fc r(min)
-		local max: dis %7.2fc r(max)
-		
-		sum coef if outcome == "`var'" & control == "all"
-		local min2: dis %7.2fc r(min)
-		local max2: dis %7.2fc r(max)
-		
-		if "`var'" == "l_salario_ultimo_obs"{
-			local dec = 3
-			local formato format(%7.2fc)
-			local scale xscale(range(`min' `max'))
-			local scale2 xscale(range(`min2' `max2'))
-		}
-		
-		else{
-			local dec = 3
-			local formato format(%7.2fc)
-			local scale xscale(range(`min' `max'))
-			local scale2 xscale(range(`min2' `max2'))
-		}
-		
-		format %13.`dec'fc coef
-		
-		twoway (sc en_var coef if control == "no" & market == "laboral_0"   ///
+    levelsof outcome, local(outcome)
+    local variable "CV"
+    foreach var in `outcome'{
+        
+        sum coef if outcome == "`var'" & market == "laboral_0"
+        local min: dis %7.2fc r(min)
+        local max: dis %7.2fc r(max)
+        
+        sum coef if outcome == "`var'" & control == "all"
+        local min2: dis %7.2fc r(min)
+        local max2: dis %7.2fc r(max)
+        
+        if "`var'" == "l_salario_ultimo_obs"{
+            local dec = 3
+            local formato format(%7.2fc)
+            local scale xscale(range(`min' `max'))
+            local scale2 xscale(range(`min2' `max2'))
+        }
+        
+        else{
+            local dec = 3
+            local formato format(%7.2fc)
+            local scale xscale(range(`min' `max'))
+            local scale2 xscale(range(`min2' `max2'))
+        }
+        
+        format %13.`dec'fc coef
+        
+        twoway (sc en_var coef if control == "no" & market == "laboral_0"   ///
         & outcome == "`var'", m(triangle) mlc(black) mfc(none)) 	        ///
-		(sc en_var coef if control == "scores" & market == "laboral_0" &    ///
+        (sc en_var coef if control == "scores" & market == "laboral_0" &    ///
         outcome == "`var'", m(square) mlc(black) mfc(none)) 		        ///
-		(sc en_var coef if control == "socioeco" & market == "laboral_0" &  ///
+        (sc en_var coef if control == "socioeco" & market == "laboral_0" &  ///
         outcome == "`var'", m(diamond) mlc(black) mfc(none)) 	            ///
-		(sc en_var coef if control == "school" & market == "laboral_0" &    ///
+        (sc en_var coef if control == "school" & market == "laboral_0" &    ///
         outcome == "`var'", m(plus) mlc(black) mfc(none)) 			        ///
-		(sc en_var coef if control == "all" & market == "laboral_0" &       ///
+        (sc en_var coef if control == "all" & market == "laboral_0" &       ///
         outcome == "`var'", m(circle) mlc(black) mlabel(coef)               ///
         mlabposition(12) mfc(none))                                         ///
-		(sc en_var coef if control == "no" & market == "laboral_0" &        ///
+        (sc en_var coef if control == "no" & market == "laboral_0" &        ///
         outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none)) 	///
-		(sc en_var coef if control == "scores" & market == "laboral_0" &    ///
+        (sc en_var coef if control == "scores" & market == "laboral_0" &    ///
         outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none)) 	///
-		(sc en_var coef if control == "socioeco" & market == "laboral_0" &  ///
+        (sc en_var coef if control == "socioeco" & market == "laboral_0" &  ///
         outcome == "`var'" & non_sig == 1, m(diamond) mlc(red) mfc(none)) 	///
-		(sc en_var coef if control == "school" & market == "laboral_0" &    ///
+        (sc en_var coef if control == "school" & market == "laboral_0" &    ///
         outcome == "`var'" & non_sig == 1, m(plus) mlc(red) mfc(none)) 		///
-		(sc en_var coef if control == "all" & market == "laboral_0" &       ///
+        (sc en_var coef if control == "all" & market == "laboral_0" &       ///
         outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mlabel(coef)  ///
         mlabposition(12) mfc(none)),                                        ///
         xline(0, lcolor(black)) legend(order(1 "No controls" 2 "Scores" 3   ///
@@ -346,17 +346,17 @@ foreach degrees in grado_prof incompleto_prof grado_tyt incompleto_tyt {
         saving(`variable'_`degrees'_control, replace)
 
 
-		twoway (sc en_var coef if control == "all" & market == "laboral_1"  ///
+        twoway (sc en_var coef if control == "all" & market == "laboral_1"  ///
         & outcome == "`var'", m(triangle) mlc(black) mfc(none)) 	        ///
-		(sc en_var coef if control == "all" & market == "laboral_2_5" &     ///
+        (sc en_var coef if control == "all" & market == "laboral_2_5" &     ///
         outcome == "`var'", m(square) mlc(black) mfc(none)) 		        ///
-		(sc en_var coef if control == "all" & market == "laboral_6_10" &    ///
+        (sc en_var coef if control == "all" & market == "laboral_6_10" &    ///
         outcome == "`var'", m(circle) mlc(black) mfc(none))		            ///
-		(sc en_var coef if control == "all" & market == "laboral_1" &       ///
+        (sc en_var coef if control == "all" & market == "laboral_1" &       ///
         outcome == "`var'" & non_sig == 1, m(triangle) mlc(red) mfc(none)) 	///
-		(sc en_var coef if control == "all" & market == "laboral_2_5" &     ///
+        (sc en_var coef if control == "all" & market == "laboral_2_5" &     ///
         outcome == "`var'" & non_sig == 1, m(square) mlc(red) mfc(none)) 	///
-		(sc en_var coef if control == "all" & market == "laboral_6_10" &    ///
+        (sc en_var coef if control == "all" & market == "laboral_6_10" &    ///
         outcome == "`var'" & non_sig == 1, m(circle) mlc(red) mfc(none)),   ///
         xline(0, lcolor(black)) legend(order(1 "First year" 2 "2-5 years" 3 ///
         "6-10 years") region(color(white)) rows(1) size(vsmall)             ///
@@ -366,11 +366,11 @@ foreach degrees in grado_prof incompleto_prof grado_tyt incompleto_tyt {
         xtitle(Point estimate, margin(medsmall)) `scale2'                   ///
         saving(`variable'_`degrees'_years, replace)
 
-		local variable "Salario"
-		
-	}
+        local variable "Salario"
+        
+    }
 
-	restore
+    restore
 }
 
 

@@ -73,19 +73,19 @@ quietly{
 
 local replace replace
 forval i = 10(40)90 {
-	
-	dis as err "Percentil `i'"
-	bsrifhdreg l_salario_ultimo_obs grado_tyt incompleto_tyt grado_prof     ///
+
+    dis as err "Percentil `i'"
+    bsrifhdreg l_salario_ultimo_obs grado_tyt incompleto_tyt grado_prof     ///
     incompleto_prof $puntajes $controls $school if                          ///
     ((SPADIES == 1 & !mi(nivel)) | SPADIES == 0), abs(year_sb11 ultimo_mes  ///
     year divipola) vce(cluster personabasicaid) rif(q(`i')) reps(int 500)   ///
     seed(64)
 
 
-	regsave grado_tyt incompleto_tyt grado_prof incompleto_prof using       ///
+    regsave grado_tyt incompleto_tyt grado_prof incompleto_prof using       ///
     "${output}\RIF_degree", `replace' ci level(95) addlabel(perc, `i')
 
-	local replace append
+    local replace append
 }
 
 
@@ -99,16 +99,16 @@ gen ID_areas = (area1 == 1 | area2 == 1 | area3 == 1 | area4 == 1 |         ///
 
 local replace replace
 forval i = 10(40)90 {
-	
-	dis as err "Percentil `i'"
-	bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if   ///
+
+    dis as err "Percentil `i'"
+    bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if   ///
     ID_areas == 1, abs(year_sb11 ultimo_mes year divipola)                  ///
     vce(cluster personabasicaid) rif(q(`i')) reps(int 500) seed(64)
 
-	regsave $areas using "${output}\RIF_areas", `replace' ci level(95)      ///
+    regsave $areas using "${output}\RIF_areas", `replace' ci level(95)      ///
     addlabel(perc, `i')
 
-	local replace append
+    local replace append
 }
 
 
@@ -118,19 +118,19 @@ forval i = 10(40)90 {
 
 local replace replace
 foreach program in grado_tyt incompleto_tyt grado_prof incompleto_prof {
-	
-	forval 10(40)90 {
-		
-		dis as err "Percentil `i'"
-		bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if ///
+
+    forval 10(40)90 {
+        
+        dis as err "Percentil `i'"
+        bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if ///
         ID_areas == 1 & `program' == 1, abs(year_sb11 ultimo_mes year         ///
         divipola) vce(cluster personabasicaid) rif(q(`i')) reps(int 500) seed(64)
 
-		regsave $areas using "${output}\RIF_areas_degree", `replace' ci       ///
+        regsave $areas using "${output}\RIF_areas_degree", `replace' ci       ///
         level(95) addlabel(perc, `i', degree,"`program'")
 
-		local replace append
-	}
+        local replace append
+    }
 }
 
 }
