@@ -23,7 +23,7 @@ set scheme white_tableau
 cap mkdir "${graphs}\RIF"
 cap mkdir "${graphs}\RIF\temps"
 
-local plot_note "{it:Note:} Results come from RIF regressions using full controls."
+local plot_note "{it:Note:} Results come from RIF regressions using full controls. Standard errors are bootstrapped using 500 samples."
 
 ****************************************************************************
 **#             1. Professional and short-cycle graduation
