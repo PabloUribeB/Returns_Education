@@ -168,7 +168,7 @@ local ultimo_mes i.ultimo_mes
                 flexibles_`years' != 1 & ID_areas == 1 & `program' == 1 &   ///
                 areas_lora == `city', vce(cluster personabasicaid)
                 
-                regsave $areas using "${output}\areas_degree_city", `replace' ///
+                cap regsave $areas using "${output}\areas_degree_city", `replace' ///
                 addlabel(outcome, "`outcome'", city, "`city'", market,        ///
                 "laboral_`years'", degree, "`program'", media, `mean_`outcome'')
                 
