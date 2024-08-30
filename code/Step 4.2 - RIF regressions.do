@@ -78,7 +78,7 @@ forval i = 10(40)90 {
     bsrifhdreg l_salario_ultimo_obs grado_tyt incompleto_tyt grado_prof     ///
     incompleto_prof $puntajes $controls $school if                          ///
     ((SPADIES == 1 & !mi(nivel)) | SPADIES == 0), abs(year_sb11 ultimo_mes  ///
-    year divipola) vce(cluster personabasicaid) rif(q(`i')) reps(int 500)   ///
+    year divipola) vce(cluster personabasicaid) rif(q(`i')) reps(500)   ///
     seed(64)
 
 
@@ -103,7 +103,7 @@ forval i = 10(40)90 {
     dis as err "Percentil `i'"
     bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if   ///
     ID_areas == 1, abs(year_sb11 ultimo_mes year divipola)                  ///
-    vce(cluster personabasicaid) rif(q(`i')) reps(int 500) seed(64)
+    vce(cluster personabasicaid) rif(q(`i')) reps(500) seed(64)
 
     regsave $areas using "${output}\RIF_areas", `replace' ci level(95)      ///
     addlabel(perc, `i')
@@ -124,7 +124,7 @@ foreach program in grado_tyt incompleto_tyt grado_prof incompleto_prof {
         dis as err "Percentil `i'"
         bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if ///
         ID_areas == 1 & `program' == 1, abs(year_sb11 ultimo_mes year         ///
-        divipola) vce(cluster personabasicaid) rif(q(`i')) reps(int 500) seed(64)
+        divipola) vce(cluster personabasicaid) rif(q(`i')) reps(500) seed(64)
 
         regsave $areas using "${output}\RIF_areas_degree", `replace' ci       ///
         level(95) addlabel(perc, `i', degree,"`program'")

@@ -247,7 +247,7 @@ replace educa_madre = 1 if inlist(fami_educa_madre, "6", "7", "8", "13",    ///
 
 ** Student works
 gen     trabaja = 0 if inlist(estu_trabaja, "N", "0", "@", "*", "+")
-replace trabaja = 1 if inlist(estu_trabaja, "S", "1", "2", "3", "4", "5",   ///
+replace trabaja = 1 if inlist(estu_trabaja, "S", "1", "2", "3", "4", "5")   ///
         | inlist(estu_trabaja, "6", "7", "8", "9")
 
 ** Will study next year
