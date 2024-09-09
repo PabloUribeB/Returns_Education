@@ -119,7 +119,7 @@ forval i = 10(40)90 {
 local replace replace
 foreach program in grado_tyt incompleto_tyt grado_prof incompleto_prof {
 
-    forval 10(40)90 {
+    forval i = 10(40)90 {
         
         dis as err "Percentil `i'"
         bsrifhdreg l_salario_ultimo_obs $areas $puntajes $controls $school if ///
