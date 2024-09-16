@@ -63,6 +63,10 @@ labvars formalidad dias_ultimo_obs dias_medianos dias_medios        ///
 
 gen flexibles_0 = 0
 gen laboral_0 = 1
+
+gen ID_areas = (area1 == 1 | area2 == 1 | area3 == 1 | area4 == 1 |         ///
+    area5 == 1 | area6 == 1 | area8 == 1 | area9 == 1)
+
 compress
 
 quietly{
@@ -93,9 +97,6 @@ forval i = 10(40)90 {
 ****************************************************************************
 **#         1.2 Knowledge areas (excluded is liberal arts)
 ****************************************************************************
-
-gen ID_areas = (area1 == 1 | area2 == 1 | area3 == 1 | area4 == 1 |         ///
-    area5 == 1 | area6 == 1 | area8 == 1 | area9 == 1)
 
 local replace replace
 forval i = 10(40)90 {
